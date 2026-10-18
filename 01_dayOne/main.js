@@ -48,4 +48,25 @@ console.log("Hello From %cJS File", "color: aqua; font-size:2rem");
 // ===================================================================
 // ===================================================================
 
-// 
+
+/* 
+    Var - Let - Const Compare
+
+    Var
+    - Redeclare (Yes)
+    - Access Before Declare (Undefined)
+    - Variable Scope Drama [Added to Window] ()
+    - Block or Function Scope
+
+    Let
+    - Redeclare (No)
+    - Access Before Declare (Error)
+    - Variable Scope Drama [Added to Window] ()
+    - Block or Function Scope
+
+    Const
+    - Redeclare (No)
+    - Access Before Declare (Error)
+    - Variable Scope Drama [Added to Window] ()
+    - Block or Function Scope
+*/
