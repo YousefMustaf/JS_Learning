@@ -406,12 +406,14 @@
 // Same Idea with MAP
 
 // let addSelf = myNums.map(function(element, index, array) {
-//     // console.log(`Current Element ${element}`)
-//     // console.log(`Current Index ${index}`)
-//     // console.log(`Array ${array}`)
-//     // console.log(`This Argumen ${this}`) 
+    // console.log(`Current Element ${element}`)
+    // console.log(`Current Index ${index}`)
+    // console.log(`Array ${array}`)
+    // console.log(`This Argumen ${this}`) 
 //     return element + element;
 // }, 10)
+// console.log(addSelf)
+
 
 // let addSelf = myNums.map((element) => element + element)
 // console.log(addSelf)
@@ -533,11 +535,143 @@
 
 
 // // Filter Strings + Multiply
-// let mix = "A13BS2ZX"
+let mix = "A13BS2ZX"
 
-// let mixedContent = mix.split("").filter(function(ele) {
-//     return !isNaN(parseInt(ele));
-// }).map(function (ele){
-//     return ele * ele
-// }).join("")
-// console.log(mixedContent)
+let mixedContent = mix.split("").filter(function(ele) {
+    return !isNaN(parseInt(ele));
+}).map(function (ele){
+    return ele * ele
+}).join("")
+console.log(mixedContent)
+
+
+/*=================================================================*/
+
+/*
+    - Reduce 
+    --- method executes a reducer function on each element of the array, 
+    --- resulting in a single output value.
+
+
+    - Syntax: 
+    
+    reduce(callBackFunction(Accumulator, Current Value, Current Index, Source Array) {}, initialValue)
+    - Accumulator => the Accumulated value previously returned in the last invocation
+    - Current Value => The Current Element Being Processed in teh Array
+    - Index => The Index If The Current Element Bing Processed in the Array.
+    ---------- Starts from index 0 if an initialValue is provided.
+    ---------- Other wise, it start from index 1.
+    - Array => The Current Array 
+*/
+
+
+// let nums = [10, 20, 15, 30]
+
+// let add = nums.reduce(function(acc, current, index, arr) {
+//     return acc + current
+// }, 5)
+
+// console.log(add);
+
+
+/*
+    Reduce Practice 
+    - Longest Word
+    - Remove Characters + Use Reduce
+*/
+
+// let theBiggest = ['Bla', 'Propaganda', 'Other', 'AAA', 'Battery', 'Test'];
+
+// let check = theBiggest.reduce(function (acc, current) {
+//     // console.log(`Acc => ${acc}`)
+//     // console.log(`Current Element => ${current}`)
+//     // console.log(`##########################`)
+//     // console.log(acc.length > current.length ? acc : current)
+//     return acc.length > current.length ? acc : current;
+// })
+
+// console.log(check)
+
+// let removeChars = ['E', '@', '@', 'L', 'Z', '@', '@', 'E', 'R', '@', 'O'];
+
+// let finalString = removeChars.filter(function(ele) {
+//     return ! ele.startsWith("@")
+// }).reduce(function(acc, current) {
+//     return acc + current
+// })
+
+// console.log(finalString)
+// // console.log(finalString.join(""))
+
+
+
+/*=================================================================*/
+
+/*
+    forEach
+    - Method executes a provided function once for each array element.
+
+    SYNTAX:
+    
+    forEach(callBackFunction(Element, Index, Array) { }, thisArgument)
+
+    - Element => The Current Element Being Processe in the Array
+    - Index => The Index of the current element being processed in the array.
+    - Array => The Current Array
+
+    -- Note --
+    - Doesn't Return Anything [Undefined]
+    - Break Will Not Break The Loop
+*/
+
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".content div")
+// // console.log((allLis));
+
+// allLis.forEach(function (ele) {
+//     ele.onclick = function() {
+//         //remove active class from all elements
+//         allLis.forEach(function (ele) {
+//             ele.classList.remove("active")
+//         })
+//         // Add Active class to this element
+//         this.classList.add('active')
+//         // hide all divs
+//         allDivs.forEach(function (ele) {
+//             ele.style.display = 'none'
+//         })
+//     };
+// })
+
+
+/*
+    Higher Order Functions 
+    
+    ---- Challenge ----
+   
+    You can Use:
+    
+    - ,
+    - _
+    - Space
+    - True => 1 => One Time Only In The Code
+
+    You Cannot Use:
+
+    - Numbers
+    - Letters
+
+    You Must Use:
+    - [Filter + Map + Reduce + Your Knowledge]
+    - Order Is Not Important
+    - All In One Chain
+*/
+
+let myString = '1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z'
+
+console.log(!isNaN(1))
+
+// let solution = myString.split("").filter(function(ele) {return isNaN(ele) ? ele : ""}).join("")
+let solution = myString.split(",").filter(function (ele) {return isNaN(ele)}).map(function (ele) {return ele.length > 1 ? ele[+true] : ele === "_" ? " " : ele}).filter(function (ele, index, array) {return index !== array.length -true}).reduce(function(acc, ele) {return acc + ele})
+console.log(solution)
+// console.log(solution) // Elzero Web School
