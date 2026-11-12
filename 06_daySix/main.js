@@ -535,14 +535,14 @@
 
 
 // // Filter Strings + Multiply
-let mix = "A13BS2ZX"
+// let mix = "A13BS2ZX"
 
-let mixedContent = mix.split("").filter(function(ele) {
-    return !isNaN(parseInt(ele));
-}).map(function (ele){
-    return ele * ele
-}).join("")
-console.log(mixedContent)
+// let mixedContent = mix.split("").filter(function(ele) {
+//     return !isNaN(parseInt(ele));
+// }).map(function (ele){
+//     return ele * ele
+// }).join("")
+// console.log(mixedContent)
 
 
 /*=================================================================*/
@@ -667,11 +667,39 @@ console.log(mixedContent)
     - All In One Chain
 */
 
-let myString = '1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z'
+// let myString = '1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z'
 
-console.log(!isNaN(1))
+// console.log(!isNaN(1))
 
-// let solution = myString.split("").filter(function(ele) {return isNaN(ele) ? ele : ""}).join("")
-let solution = myString.split(",").filter(function (ele) {return isNaN(ele)}).map(function (ele) {return ele.length > 1 ? ele[+true] : ele === "_" ? " " : ele}).filter(function (ele, index, array) {return index !== array.length -true}).reduce(function(acc, ele) {return acc + ele})
-console.log(solution)
+// // let solution = myString.split("").filter(function(ele) {return isNaN(ele) ? ele : ""}).join("")
+// let solution = myString.split(",").filter(function (ele) {return isNaN(ele)}).map(function (ele) {return ele.length > 1 ? ele[+true] : ele === "_" ? " " : ele}).filter(function (ele, index, array) {return index !== array.length -true}).reduce(function(acc, ele) {return acc + ele})
+
+// console.log(solution)
 // console.log(solution) // Elzero Web School
+
+/*=========== DONE ================*/
+
+/*================================================================================================*/ 
+/*================================================================================================*/ 
+/*================================================================================================*/ 
+/*================================================================================================*/ 
+/*================================================================================================*/ 
+/*================================================================================================*/ 
+
+
+
+/*
+    Object 
+    - Dig Deeper
+    - Dot Notation vs Bracket Notation
+    - Dynamic Property Name
+*/
+
+let user = {
+    theName: "Youssef",
+    theAge: 19,
+    jobTitle: "an English Customer Service Provider Agent",
+    jobCompany: "Teleperformance"
+};
+
+console.log(`Hello My Name is ${user.theName} I am ${user.theAge} I am currently working as ${user.jobTitle} in ${user.jobCompany} Company`)
