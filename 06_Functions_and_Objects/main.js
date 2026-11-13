@@ -695,11 +695,226 @@
     - Dynamic Property Name
 */
 
-let user = {
-    theName: "Youssef",
-    theAge: 19,
-    jobTitle: "an English Customer Service Provider Agent",
-    jobCompany: "Teleperformance"
-};
+// let myVar = "country"
 
-console.log(`Hello My Name is ${user.theName} I am ${user.theAge} I am currently working as ${user.jobTitle} in ${user.jobCompany} Company`)
+// let user = {
+//     theName: "Youssef",
+//     country: "Germany",
+//     'country of': "Egypt",
+//     theAge: 19,
+//     jobTitle: "an English Customer Service Provider Agent",
+//     jobCompany: "Teleperformance"
+// };
+
+// console.log(`Hello My Name is ${user.theName}
+//     I am ${user.theAge}
+//     I am currently working as ${user.jobTitle}
+//     in ${user.jobCompany} Company`)
+
+// console.log(`${user.theName}`); // Youssef
+// console.log(`${user['theName']}`);   // Youssef
+
+// console.log(user.myVar)      // undefined
+// console.log(user[myVar])    // Germany
+
+// console.log(`${user['country of']}`);   // Egypt
+
+/*================================================================================================*/ 
+
+/*
+    Object
+    - Nested Object And Trainings
+*/
+
+// let user = {
+//     name: "Youssef",
+//     age: 19,
+//     skills: ["HTML", "CSS", "JavaScript", "Advanced Linux Adminstration"],
+//     available: false,
+//     addresses: {
+//         ksa: "Riyadh",
+//         egypt: {
+//             first: "Cairo",
+//             second: "Beni-Suif",
+//         },
+//     },
+//     checkAv: function () {
+//         if (user.available === true) {
+//             return `Free For Work`
+//         } else {
+//             return `Not Free`
+//         }
+//     }
+// }
+
+// console.log(user.name);
+// console.log(user.age);
+// console.log(`Skills Are:\n=============\n${user.skills.join("\n")}`);
+// console.log(user.addresses.egypt.second);
+// console.log(user['addresses']['egypt']['first']);
+// console.log(user.checkAv())
+
+/*================================================================================================*/ 
+
+/*
+    Object
+    - Create With New Keyword new Object();  
+*/
+
+// normal way
+
+// let user = {};
+// user.name = "Youssef Mostafa"
+// user.age = 19
+// user.country = "Egypt"
+// console.log(user.name, user.age);
+
+
+// user.sayHello = function () {
+//     return `Hello Friend ${user.name}`
+// }
+
+// console.log(user)
+// console.log(user.age)
+// console.log(user.country)
+// console.log(user.sayHello())
+
+
+// new way
+
+// let user = new Object();
+
+// user.name = "Youssef Mostafa"
+// user.age = 19
+// user.country = "Egypt"
+
+// console.log(`Hello My Name is ${user.name} I am ${user.age}, and I Live in ${user.country} :)`);
+
+
+
+/*================================================================================================*/ 
+
+/*
+    Function this Keyword
+    - this Introduction
+    - this Inside Object Method
+    --- When a function is called as a method of an object,
+    --- its this is set to teh object the method is called on.
+    - Global Object
+    - Test Variables With Window And This
+    - Global Context
+    - Functoin Context
+
+    Search
+    - Strict Mode
+*/
+
+// console.log(this)
+// console.log(this === window)    // true
+
+// myVar = 100;
+
+// console.log(window.myVar) // 100
+// console.log(this.myVar)  //  100
+
+// function sayHello() {
+//     return this
+// }
+
+// console.log(sayHello())             // window
+// console.log(sayHello() === window)  // true
+
+// document.getElementById("cl").onclick = function () {
+//     console.log(this)
+// }
+
+
+// let user = {
+//     age : 19,
+//     ageInDays: function() {
+//         return this.age * 365
+//     },
+// };
+
+// console.log(user.age)
+// console.log(user.ageInDays())
+
+
+/*
+    Object
+    - Create Object With Create Method
+*/
+
+// let user = {
+//     age: 19,
+//     doubleAge: function() {
+//         return this.age * 2
+//     },
+// };
+
+// console.log(user);
+// console.log(user.age);
+// console.log(user.doubleAge());
+
+
+// let obj = Object.create({
+
+// });
+// obj.a = 100;
+// console.log(obj)
+
+
+
+// let copyObj = Object.create(user)
+
+// copyObj.age = 20
+
+// console.log(copyObj);
+// console.log(copyObj.age);
+// console.log(copyObj.doubleAge());
+
+
+/*================================================================================================*/ 
+
+/*
+    Object
+    - Create Object with assign Method
+*/
+
+// let obj1 = {
+//     prop1: 1,
+//     meth1: function () {
+//         return this.prop1
+//     },
+// };
+
+// let obj2 = {
+//     prop2: 2,
+//     meth2: function () {
+//         return this.prop2
+//     },
+    
+// };
+
+// let targetObject = {
+//     prop1: 100,
+//     prop3: 3,
+// }
+
+// let finalObject = Object.assign(targetObject, obj1, obj2);
+
+// finalObject.prop1 = 200;
+
+// finalObject.prop4 = 10;
+
+// console.log(finalObject);
+
+
+// let newObject = Object.assign({}, obj1, {prop5: 5, prop6: 6,})
+// console.log(newObject);
+
+                // ____
+                // |  _ \  ___  _ __   ___
+                // | | | |/ _ \| '_ \ / _ \
+                // | |_| | (_) | | | |  __/
+                // |____/ \___/|_| |_|\___|
